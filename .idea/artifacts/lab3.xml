@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ear" name="lab3">
+    <output-path>$PROJECT_DIR$/out/artifacts/lab3</output-path>
+    <root id="archive" name="lab3.ear">
+      <element id="module-source" name="weblab3.main" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             version="2.1">
+  <persistence-unit name="myPersistenceUnit" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>model.HitResult</class>
+    <properties>
+      <property name="javax.persistence.jdbc.driver"
+                value="oracle.jdbc.OracleDriver"/>
+      <property name="javax.persistence.jdbc.url"
+                value="jdbc:oracle:thin:@localhost:1521:ORCL"/>
+      <property name="javax.persistence.jdbc.user"   value="USERNAME"/>
+      <property name="javax.persistence.jdbc.password" value="PASSWORD"/>
+      <property name="eclipselink.ddl-generation"     value="update-tables"/>
+      <property name="eclipselink.logging.level"       value="FINE"/>
+    </properties>
+  </persistence-unit>
+</persistence>
