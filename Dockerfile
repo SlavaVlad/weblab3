@@ -8,7 +8,9 @@ RUN gradle build -x test
 # 2. Лёгкий Open Liberty с поддержкой Java 21
 FROM quay.io/wildfly/wildfly:latest
 
+HEALTHCHECK CMD curl --fail http://localhost:8080/
+
 # 3. Деплой приложения
 COPY --from=builder /build/build/libs/*.war /opt/wildfly/standalone/deployments/ROOT.war
 
-EXPOSE 9080
+EXPOSE 8080
