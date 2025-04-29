@@ -14,11 +14,6 @@ plugins {
 group = "com.nano"
 version = "1.0-SNAPSHOT"
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-}
-
 // Разрешаем аннотации JPA-классов в Kotlin
 allOpen {
     annotation("jakarta.persistence.Entity")
