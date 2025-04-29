@@ -11,8 +11,4 @@ FROM quay.io/wildfly/wildfly:latest
 # 3. Деплой приложения
 COPY --from=builder /build/build/libs/*.war /opt/wildfly/standalone/deployments/ROOT.war
 
-# 4. Healthcheck
-HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=5 \
-    CMD curl -f http://localhost:9080/ || exit 1
-
 EXPOSE 9080
