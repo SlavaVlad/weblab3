@@ -7,13 +7,13 @@
 <h:head>
    <title>Основная страница</title>
    <script type="text/javascript">
-      function handleImageClick(e) {
-         var img = document.getElementById("#{p:component('chart')}");
-         var rect = img.getBoundingClientRect();
-         var x = (e.clientX - rect.left - img.width/2) * #{inputBean.r} / (img.width/2);
-         var y = (img.height/2 - (e.clientY - rect.top)) * #{inputBean.r} / (img.height/2);
-         pointClick([{name:'clickX', value: x}, {name:'clickY', value: y}]);
-      }
+      // function handleImageClick(e) {
+      //    var img = document.getElementById("#{p:component('chart')}");
+      //    var rect = img.getBoundingClientRect();
+      //    var x = (e.clientX - rect.left - img.width/2) * #{inputBean.r} / (img.width/2);
+      //    var y = (img.height/2 - (e.clientY - rect.top)) * #{inputBean.r} / (img.height/2);
+      //    pointClick([{name:'clickX', value: x}, {name:'clickY', value: y}]);
+      // }
       window.onload = function() {
          document.getElementById("#{p:component('chart')}").onclick = handleImageClick;
       }
@@ -40,9 +40,7 @@
          <h:outputLabel for="rSlider" value="R:"/>
          <ace:sliderEntry id="rSlider"
                           value="#{inputBean.r}"
-                          minimum="2"
-                          maximum="5"
-                          step="0.25"/>
+         />
       </h:panelGrid>
 
       <p:commandButton value="Проверить"
