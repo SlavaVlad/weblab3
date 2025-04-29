@@ -6,10 +6,10 @@ COPY . .
 RUN gradle build -x test
 
 # 2. Лёгкий Open Liberty с поддержкой Java 21
-FROM openliberty/open-liberty:kernel-slim-java21-openj9
+FROM quay.io/wildfly/wildfly:latest
 
 # 3. Деплой приложения
-COPY --from=builder /build/build/libs/*.war /config/dropins/ROOT.war
+COPY --from=builder /build/build/libs/*.war /opt/wildfly/standalone/deployments/ROOT.war
 
 # 4. Healthcheck
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=5 \
